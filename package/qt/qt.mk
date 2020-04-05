@@ -15,7 +15,7 @@ QT_LICENSE := LGPL-2.1 with exceptions or GPL-3.0
 QT_LICENSE_FILES = LICENSE.LGPL LGPL_EXCEPTION.txt LICENSE.GPL3
 
 # Opensource licenses are the only one we catter about
-QT_CONFIGURE_OPTS += -opensource -confirm-license
+QT_CONFIGURE_OPTS += -opensource -confirm-license -fontconfig
 
 QT_CONFIG_FILE = $(call qstrip,$(BR2_PACKAGE_QT_CONFIG_FILE))
 
@@ -221,7 +221,6 @@ QT_EMB_PLATFORM = sh
 else
 QT_EMB_PLATFORM = generic
 endif
-
 ifeq ($(BR2_PACKAGE_QT_X11),y)
 QT_DEPENDENCIES += fontconfig xlib_libXi xlib_libX11 xlib_libXrender \
 	xlib_libXcursor xlib_libXrandr xlib_libXext xlib_libXv
